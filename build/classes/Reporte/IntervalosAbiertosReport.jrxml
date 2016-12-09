@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="763b8955-af4f-47ad-85f4-d7106b618ec7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Funcion" class="java.lang.String"/>
+	<parameter name="Variable" class="java.lang.String"/>
+	<parameter name="ValorInicial" class="java.lang.String"/>
+	<parameter name="ValorVerdadero" class="java.lang.String"/>
+	<parameter name="EaT" class="java.lang.String"/>
+	<parameter name="Grafica" class="java.io.InputStream"/>
+	<parameter name="Metodo" class="java.lang.String"/>
+	<field name="Iteracion" class="java.lang.String"/>
+	<field name="Xi" class="java.lang.String"/>
+	<field name="Et" class="java.lang.String"/>
+	<field name="Ea" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="4f195f24-6db2-4bb8-9b94-3f4984126f0e" x="0" y="0" width="572" height="46" backcolor="#006666"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="6bf7567a-0793-4c74-93ee-2e6850182bd7" x="0" y="0" width="572" height="42" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Intervalos Abiertos]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="921613cc-c3f2-4f7f-9a63-ac13c61b064f" x="0" y="27" width="572" height="20" forecolor="#FEFEFF"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Metodo de evaluacion "+$P{Metodo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="8c7f2fdf-9d9e-4a5d-b5fb-ec830234302a" mode="Opaque" x="0" y="0" width="572" height="83" backcolor="#FFFFCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" x="0" y="0" width="120" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[   Función:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" x="0" y="34" width="120" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[   Variable:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" x="0" y="54" width="120" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[   Valor Inicial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" x="278" y="34" width="146" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Verdadero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" x="278" y="54" width="146" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ea(%):]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="79df2f47-5be1-43e8-93c1-0266af5e0311" x="120" y="0" width="444" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Funcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="921613cc-c3f2-4f7f-9a63-ac13c61b064f" x="120" y="34" width="146" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Variable}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="78765de7-74a1-4095-b385-23e6c5e03dc4" x="120" y="54" width="146" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ValorInicial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="375567ca-d6fe-4a1b-95d4-48f661e84e40" x="424" y="34" width="140" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ValorVerdadero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="acaae648-352a-4728-93aa-6016c076c49d" x="424" y="54" width="140" height="20" forecolor="#000066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EaT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" mode="Opaque" x="0" y="0" width="78" height="20" forecolor="#FFFFFF" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Iteración]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" mode="Opaque" x="78" y="0" width="200" height="20" forecolor="#FFFFFF" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Xi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" mode="Opaque" x="278" y="0" width="146" height="20" forecolor="#FFFFFF" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Et(%)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="465b0842-2db7-4dbf-85a0-4419cd1b312d" mode="Opaque" x="424" y="0" width="148" height="20" forecolor="#FFFFFF" backcolor="#009999"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ea(%)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="f656889f-4d62-4877-87b5-f100948ac67a" mode="Opaque" x="0" y="0" width="78" height="20" backcolor="#FFFFCC"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Iteracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="60344c6f-7935-4cf8-a5c1-3e28403aa8d2" mode="Opaque" x="78" y="0" width="200" height="20" backcolor="#FFFFCC"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Xi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ca4c094-7f04-4f40-9660-46f0f6d3a129" mode="Opaque" x="278" y="0" width="146" height="20" backcolor="#FFFFCC"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Et}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b566bf2-9771-4534-92f1-f3d46f18956e" mode="Opaque" x="424" y="0" width="148" height="20" backcolor="#FFFFCC"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ea}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="6d8ab79b-e9ac-4758-9ee3-3c2182f597e7" mode="Opaque" x="0" y="0" width="572" height="32" backcolor="#FFFFCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="7ecb3d92-2f18-42b0-96ec-8bb4c471c7c8" x="0" y="6" width="572" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Creado por Reymundo Tenorio, Donaldo Vargas y Martin Larios]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="267">
+			<rectangle>
+				<reportElement uuid="6d8ab79b-e9ac-4758-9ee3-3c2182f597e7" mode="Opaque" x="0" y="0" width="572" height="267" backcolor="#FFFFCC"/>
+			</rectangle>
+			<image>
+				<reportElement uuid="9e36739b-f3d8-4706-8a8f-eab505fd6c06" x="82" y="8" width="409" height="250"/>
+				<imageExpression><![CDATA[$P{Grafica}]]></imageExpression>
+			</image>
+		</band>
+	</lastPageFooter>
+</jasperReport>
